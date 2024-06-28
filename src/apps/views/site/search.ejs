@@ -1,0 +1,22 @@
+<%- include("./layout/head",{title: "Search"}) %>
+<%- include("./layout/header") %>
+<%- include("./layout/menu") %>
+<%- include("./layout/slider") %>
+                
+                <!--	List Product	-->
+                <div class="products">
+                    <div id="search-result">Kết quả tìm kiếm với sản phẩm <span><%= keyword %></span></div>
+                    <div class="product-list card-deck">
+                        <% for(let item of search) {%>
+                            <%- include("./components/product-item",{item}) %>
+                        <% } %>
+                    </div>
+                </div>
+                <!--	End List Product	-->
+                <% let path = "/search?keyword="+keyword+"&" %>
+                <%- include("./components/pagination",{path}) %>
+                
+            </div>
+            
+<%- include("./layout/slidebar") %>
+<%- include("./layout/footer") %>

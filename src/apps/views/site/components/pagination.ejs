@@ -1,0 +1,19 @@
+<div id="pagination">
+    <ul class="pagination">
+        <% if(hasPrev) {%>
+            <li class="page-item"><a class="page-link" href="<%= path %>page=<%= prev %>">&laquo;</a></li>
+        <% } %>
+        <% for(let i of pages) {%>
+        <li class="page-item <%= i==page ? 'active' : '' %>">
+            <% if(i=="...") {%>
+            <span class="page-link"><%= i %></span>
+            <% }else {%>
+            <a class="page-link" href="<%= path %>page=<%= i %>"><%= i %></a>
+            <% } %>
+        </li>
+        <% } %>
+        <% if(hasNext) {%>
+        <li class="page-item"><a class="page-link" href="<%= path %>page=<%= next %>">&raquo;</a></li>
+        <% } %>
+    </ul> 
+</div>

@@ -1,0 +1,21 @@
+<%- include("./layout/head",{title: "Category"}) %>
+<%- include("./layout/header") %>
+<%- include("./layout/menu") %>
+<%- include("./layout/slider") %>
+                
+                <!--	List Product	-->
+                <div class="products">
+                    <h3><%= category.title %> (hiện có <%= products.length %> sản phẩm)</h3>
+                    <div class="product-list card-deck">
+                        <% for(let item of products) {%>
+                            <%- include("./components/product-item",{item}) %>
+                        <% } %>
+                    </div>
+                </div>
+                <!--	End List Product	-->
+                <% let path = "/category-"+category.slug+"."+category._id+"?" %>
+                <%- include("./components/pagination",{path}) %>  
+            </div>
+            
+<%- include("./layout/slidebar") %>
+<%- include("./layout/footer") %>

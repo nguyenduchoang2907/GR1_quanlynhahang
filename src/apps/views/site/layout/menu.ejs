@@ -1,0 +1,16 @@
+<!--	Body	-->
+<div id="body">
+	<div class="container">
+    	<div class="row">
+        	<div class="col-lg-12 col-md-12 col-sm-12">
+            	<nav>
+                	<div id="menu" class="collapse navbar-collapse">
+                        <ul>
+                            <% for(item of categories) {%>
+                                <li class="menu-item"><a href="/category-<%= item.slug %>.<%= item._id %>"><%= item.title %></a></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>

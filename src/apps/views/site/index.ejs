@@ -1,0 +1,30 @@
+ <%- include("./layout/head",{title: "Home"}) %>
+ <%- include("./layout/header") %>
+ <%- include("./layout/menu") %>
+ <%- include("./layout/slider") %>
+ <!--	Feature Product	-->
+                <div class="products">
+                    <h3>Sản phẩm nổi bật</h3>
+                    <div class="product-list card-deck">
+                        <% for(let item of featured) {%>
+                            <%- include("./components/product-item",{item}) %>
+                        <% } %>
+                    </div>
+                </div>
+                <!--	End Feature Product	-->
+                
+                
+                <!--	Latest Product	-->
+                <div class="products">
+                    <h3>Sản phẩm mới</h3>
+                    <div class="product-list card-deck">
+                        <% for(let item of latest) {%>
+                            <%- include("./components/product-item",{item}) %>
+                        <% } %>
+                    </div>
+                </div>
+                <!--	End Latest Product	-->
+                
+            </div>
+<%- include("./layout/slidebar") %>
+<%- include("./layout/footer") %>
